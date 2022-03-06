@@ -105,7 +105,7 @@ const randomQuestion = () => {
           indexOfQuestion = randomNumber;
           load();
       }
-  };
+  }
   completedAnswers.push(indexOfQuestion);
 };
 
