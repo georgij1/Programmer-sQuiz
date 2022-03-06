@@ -74,6 +74,7 @@ body {
     cursor: pointer;
     transition: all .2s ease-in-out;
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .button #btn-next:hover {
