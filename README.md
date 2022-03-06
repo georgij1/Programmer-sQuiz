@@ -1,2 +1,2 @@
 # Programmer-sQuiz
-#https://georgij1.github.io/educational-quiz/
+#https://georgij1.github.io/educational-quiz/index.html
