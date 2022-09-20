@@ -66,19 +66,20 @@ body {
 
 .button #btn-next {
     padding: 10px 50px;
-    background-color: darkcyan;
+    background-color: blue;
     font-size: 18px;
     color: #ffffff;
-    border: none; 
     border-radius: 5px;
     cursor: pointer;
     transition: all .2s ease-in-out;
     margin-bottom: 15px;
     width: 100%;
+    border: 2px solid blue;
 }
 
 .button #btn-next:hover {
-    background-color: #009687b6;
+    background-color: #FFF;
+    color: black;
 }
 
 #answers-tracker {
@@ -148,4 +149,12 @@ body {
 
 .quiz-over-modal .content button:hover {
     background-color: #ff9900b4;
+}
+
+.not_visible {
+    display: none;
+}
+
+.visible {
+    display: block;
 }

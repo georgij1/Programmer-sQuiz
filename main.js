@@ -149,8 +149,19 @@ const upDateAnswerTracker = status => {
 
 const validate = () => {
     if (!optionElements[0].classList.contains('disabled')){
-        alert('Вам нужно выбрать один из вариантов ответа');
-    }else {
+        let error = document.querySelector('#error');
+        error.classList.add('active')
+
+        function close_modal() {
+            let btn_close_modal = document.querySelector('#btn-close-modal');
+            btn_close_modal.addEventListener('click', function () {
+                error.classList.remove('active')
+            })
+        }
+        close_modal()
+    }
+
+    else {
         randomQuestion();
         enabledOption();
     }
@@ -165,8 +176,37 @@ for (option of optionElements){
 const quizOver = () => {
     console.log('Игра окончена');
     document.querySelector('.quiz-over-modal').classList.add('active');
-    correctAnswer.innerHTML = score;
     numberOfAllQuestion2.innerHTML = questions.length;
+    correctAnswer.innerHTML = score;
+    console.log(score)
+
+    function show_text_result() {
+
+        let bad_result_0_1 = document.querySelector('#bad_result_0_1');
+        let good_result_2 = document.querySelector('#good_result_2');
+        let good_result_3 = document.querySelector('#good_result_3');
+        let great_result_4 = document.querySelector('#great_result_4');
+
+        if (score === 1 || score <= 1) {
+            bad_result_0_1.classList.toggle('visible')
+        }
+
+        else if (score === 2) {
+            good_result_2.classList.toggle('visible')
+        }
+
+        else if (score === 3) {
+            good_result_3.classList.toggle('visible')
+        }
+
+        if (score === 4) {
+            great_result_4.classList.toggle('visible')
+        }
+
+        console.log(score)
+    }
+
+    show_text_result()
 }
 
 const TryAgain = () => {
@@ -179,5 +219,3 @@ window.addEventListener('load', () => {
     randomQuestion();
     answerTracker();
 })
-
-
